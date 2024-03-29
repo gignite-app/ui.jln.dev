@@ -2,18 +2,9 @@
 
 import dynamic from "next/dynamic";
 
-import { Account } from "@/client/components/menu/account";
-import { AppTheme } from "@/client/components/menu/app-theme";
 import { CopyCode } from "@/client/components/menu/copy-code";
 import { Customize } from "@/client/components/menu/customize";
-import { Explore } from "@/client/components/menu/explore";
-import { GitHub } from "@/client/components/menu/github";
 import { GoBack } from "@/client/components/menu/go-back";
-import { Random } from "@/client/components/menu/random";
-import { Save } from "@/client/components/menu/save";
-import { SavedThemes } from "@/client/components/menu/saved-themes";
-import { Xcom } from "@/client/components/menu/xcom";
-import { Separator } from "@/client/components/ui/separator";
 
 const Menu = () => {
   return (
@@ -23,12 +14,12 @@ const Menu = () => {
           <div className="absolute -left-1 top-0 -translate-x-full">
             <GoBack />
           </div>
-          <Random />
+          {/* <Random /> */}
         </div>
         <div className="pointer-events-auto relative mx-auto flex flex-shrink-0 items-center gap-2 rounded-md border border-accent bg-accent/40 p-2 shadow backdrop-blur-sm scrollbar-thin max-lg:overflow-x-auto max-sm:w-full">
           <Customize />
           <CopyCode />
-          <Save />
+          {/* <Save />
           <Separator orientation="vertical" className="bg-accent" />
           <Explore />
           <SavedThemes />
@@ -38,7 +29,7 @@ const Menu = () => {
           <GitHub />
           <div>
             <Account />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
