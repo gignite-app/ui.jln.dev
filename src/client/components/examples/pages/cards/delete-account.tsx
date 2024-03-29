@@ -24,7 +24,7 @@ import {
 } from "@/client/components/customizable/form";
 import { Input } from "@/client/components/customizable/input";
 
-import { useZodForm } from "@jlns/hooks";
+import { useZodForm } from "@jlns/form/zod";
 import { z } from "zod";
 
 export const DeleteAccount = () => {

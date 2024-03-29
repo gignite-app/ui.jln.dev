@@ -43,7 +43,8 @@ import { SaveThemeSchema } from "@/shared/save-theme-schema";
 import { type Theme } from "@/shared/theme-config";
 import { api } from "@/trpc/react";
 
-import { useIsMobile, useZodForm } from "@jlns/hooks";
+import { useZodForm } from "@jlns/form/zod";
+import { useIsMobile } from "@jlns/hooks";
 import { Colord } from "colord";
 import { useSession } from "next-auth/react";
 import { ofetch } from "ofetch";

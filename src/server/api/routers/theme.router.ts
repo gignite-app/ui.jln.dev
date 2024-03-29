@@ -3,7 +3,6 @@ import { publicProcedure, router } from "@/server/api/trpc";
 import { db } from "@/server/db";
 import { stars, themes } from "@/server/db/schema";
 import { createId } from "@/server/db/utils/create-id";
-import { getVscodeThemes } from "@/server/get-vscode-themes";
 import {
   changeVisiblityRateLimit,
   saveThemePublicRateLimit,
@@ -301,28 +300,28 @@ export const themeRouter = router({
     return res.count;
   }),
 
-  allPublicVscodeThemes: publicProcedure
-    .input(
-      z.object({
-        query: z.string().optional(),
-        cursor: z.number().nullish(),
-      }),
-    )
-    .query(async ({ input }) => {
-      const limit = 50;
-      const offset = input.cursor ?? 0;
-      const allPublicVscodeThemes = await getVscodeThemes({
-        limit,
-        offset,
-        query: input.query,
-      });
+  // allPublicVscodeThemes: publicProcedure
+  //   .input(
+  //     z.object({
+  //       query: z.string().optional(),
+  //       cursor: z.number().nullish(),
+  //     }),
+  //   )
+  //   .query(async ({ input }) => {
+  //     const limit = 50;
+  //     const offset = input.cursor ?? 0;
+  //     const allPublicVscodeThemes = await getVscodeThemes({
+  //       limit,
+  //       offset,
+  //       query: input.query,
+  //     });
 
-      return {
-        themes: allPublicVscodeThemes,
-        nextCursor:
-          allPublicVscodeThemes.length === limit ? offset + limit : null,
-      };
-    }),
+  //     return {
+  //       themes: allPublicVscodeThemes,
+  //       nextCursor:
+  //         allPublicVscodeThemes.length === limit ? offset + limit : null,
+  //     };
+  //   }),
 });
 
 const getStarredByUserQuery = (userId?: string) => {

@@ -30,7 +30,8 @@ import { type DatabaseTheme } from "@/server/db/schema";
 import { SaveThemeSchema } from "@/shared/save-theme-schema";
 import { api } from "@/trpc/react";
 
-import { useIsMobile, useZodForm } from "@jlns/hooks";
+import { useZodForm } from "@jlns/form/zod";
+import { useIsMobile } from "@jlns/hooks";
 import { toast } from "sonner";
 
 export const Public = ({ theme }: { theme: DatabaseTheme }) => {

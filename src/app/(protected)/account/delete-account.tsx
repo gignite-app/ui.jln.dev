@@ -25,7 +25,7 @@ import { Input } from "@/client/components/ui/input";
 import { useAuth } from "@/client/lib/use-auth";
 import { api } from "@/trpc/react";
 
-import { useZodForm } from "@jlns/hooks";
+import { useZodForm } from "@jlns/form/zod";
 import { toast } from "sonner";
 import { z } from "zod";
 
